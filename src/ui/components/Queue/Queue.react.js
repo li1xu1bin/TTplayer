@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { ButtonGroup, Button } from 'react-bootstrap';
 import classnames from 'classnames';
 
 import QueueListItem  from './QueueListItem.react';
 
 import AppActions from '../../actions/AppActions';
 
-import { getStatus } from '../../utils/utils-library';
 /*
 |--------------------------------------------------------------------------
 | 播放队列

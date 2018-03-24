@@ -4,9 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Nav, NavItem, ButtonGroup, Button } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { ButtonGroup, Button } from 'react-bootstrap';
 
 import Dropzone from './Dropzone.react';
 import CheckboxSetting from './CheckboxSetting.react';

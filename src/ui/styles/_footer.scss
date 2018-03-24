@@ -1,15 +1,12 @@
 //--------------------------------------------------------------------------
 // 底部控制
 //--------------------------------------------------------------------------
-
-
 .footer {
     -webkit-app-region: drag;
-    .player-control{
+    .player-control {
         -webkit-app-region: no-drag;
     }
 }
-
 
 //底部控制部分
 .controls-block {
@@ -31,20 +28,13 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
-    } 
-   
-    
-   
-
-}
- //控制按钮
+    }
+} //控制按钮
 .player-control {
     border: 0;
     background: transparent;
     margin: 0 5px;
-    
     &.previous {
-
         // color: #fff;
         // background-color: $main_color;
         width: 30px;
@@ -53,15 +43,14 @@
         font-size: 16px;
     }
     &.play {
-
         // color: #fff;
         // background-image: linear-gradient(-28deg, #3394FF 0%, #62BFFF 95%);
         width: 40px;
         height: 40px;
         font-size: 26px;
         border-radius: 100%;
-        span.fa-pause{
-            color:$main_color;
+        span.fa-pause {
+            color: $main_color;
         }
     }
     &.forward {
@@ -77,61 +66,61 @@
             width: 30px;
         }
     }
-    &.shuffle,&.repeat {
-        span{
+    &.shuffle,
+    &.repeat {
+        span {
             display: flex;
         }
     }
-    &.active{
+    &.active {
         svg {
-            fill:$main_color;
+            fill: $main_color;
         }
     }
     svg {
         width: 20px;
     }
-    &:hover{
-        color:$main_color;
+    &:hover {
+        color: $main_color;
     }
     &.plug {
         position: absolute;
         right: 50px;
         bottom: 30px;
     }
-} 
+}
+
 //音量条样式
 .volume-control {
     -webkit-app-region: no-drag;
     input[type=range] {
         width: 88px;
-        background:transparent; 
+        background: transparent;
         cursor: pointer;
         outline: none;
-        -webkit-appearance: none;/*清除系统默认样式*/    
+        -webkit-appearance: none;
+        /*清除系统默认样式*/
         &::focus {
             outline: none;
-        }
-        // 滑动条样式
+        } // 滑动条样式
         &::-webkit-slider-runnable-track {
             height: 8px;
-            border-radius: 20px; 
+            border-radius: 20px;
             background: $main_color;
             border: none;
-        }
-        // 滑块样式
-        &::-webkit-slider-thumb {    
+        } // 滑块样式
+        &::-webkit-slider-thumb {
             position: relative;
-            -webkit-appearance: none;   
-            height:14px;   
+            -webkit-appearance: none;
+            height: 14px;
             width: 14px;
-            top: -3px; 
-            background: #fff;  
-            border-radius: 50%;   
-            border:1px solid $main_color;
-       }   
+            top: -3px;
+            background: #fff;
+            border-radius: 50%;
+            border: 1px solid $main_color;
+        }
     }
 }
-
 
 //播放歌单按钮
 .queue-dropdown {
@@ -164,6 +153,7 @@
         }
     }
 }
+
 //播放歌单队列
 .queue {
     .empty-queue {
@@ -234,12 +224,12 @@
                     text-decoration: none;
                 }
             }
-            &:hover{
+            &:hover {
                 background: #eee;
             }
             &:hover .remove {
                 visibility: visible;
             }
-        } 
+        }
     }
 }

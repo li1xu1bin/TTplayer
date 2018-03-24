@@ -1,22 +1,17 @@
 import os from 'os';
 import React, { Component } from 'react';
-import { withRouter, Route, Switch } from 'react-router';
+import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
 
-import Icon from 'react-fontawesome';
 import { connect } from 'react-redux';
 import Input from 'react-simple-input';
-import classnames from 'classnames';
 
 import AppActions from '../../actions/AppActions';
 import WindowControls from './WindowControls.react';
 
 import { config } from '../../lib/app';
-import { isCtrlKey } from '../../utils/utils-platform';
 
 /*
 |--------------------------------------------------------------------------

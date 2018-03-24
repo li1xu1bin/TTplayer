@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
-
 /*
 |--------------------------------------------------------------------------
 | 提示
@@ -21,16 +19,16 @@ export default class Toasts extends Component {
   render() {
     return (
       <div className='toasts'>
-        { this.props.toasts.map((toast, index) => {
+        { this.props.toasts.map((toast) => {
           return (
             // <Toast
             //   type={toast.type}
             //   content={toast.content}
             //   key={index}
             // />
-      <div className={`alert alert-${toast.type}`}>
-          {toast.content}
-       </div>
+            <div className={`alert alert-${toast.type}`}>
+              {toast.content}
+            </div>
           );
         }) 
         }

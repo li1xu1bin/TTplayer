@@ -1,15 +1,11 @@
-import os from 'os';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import Icon from 'react-fontawesome';
 import { Dropdown } from 'react-bootstrap';
 
 import AppActions from '../../actions/AppActions';
-import { config } from '../../lib/app';
-import { isCtrlKey } from '../../utils/utils-platform';
 
 import VolumeControl from './VolumeControl.react';
 import ButtonShuffle from './ButtonShuffle.react';
