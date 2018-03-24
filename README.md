@@ -21,5 +21,5 @@
 - `cd TTplay`
 - `npm install`
 - `npm run compile` or `npm run dev`  
-- 然后在另一个终端：`npm run museeks` or `npm run museeks:debug`
+- 然后在另一个终端：`npm run ttplayer` or `npm run ttplayer:debug`
 
