@@ -1,0 +1,80 @@
+//--------------------------------------------------------------------------
+// 歌单列表
+//--------------------------------------------------------------------------
+
+.view.view-playlists {
+  display: flex;
+
+  //歌单列表栏
+  .playlists-nav {
+    width: 140px;
+    max-height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .playlists-nav-body {
+      max-height: 100%;
+      overflow: auto;
+
+      .playlist-nav-item {
+        a {
+          display: block;
+          color: inherit;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          cursor: pointer;
+          padding: 12px;
+          // padding-left: 30px;
+          text-decoration: none;
+          border-style: solid;
+          border-color: transparent;
+
+          &:hover {
+            background-color: #e6e6e6;
+          }
+
+          &.active {
+            color: $main_color;
+            font-size: medium;
+          }
+        }
+
+        input[type="text"] {
+          display: block;
+          width: 100%;
+          background-color: $white;
+          color: $main_color;
+          padding: 12px 15px;
+          outline: none;
+          border-color: transparent;
+        }
+      }
+    }
+
+    .playlists-nav-footer {
+      position: absolute;
+      bottom: 0;
+
+      .playlists-management {
+        margin: 10px;
+        // border: solid 1px #CCC;
+
+        button {
+          text-align: center;
+          color: #555;
+          width: 22px;
+          text-align: center;
+
+          .fa {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .playlist {
+    flex: 1;
+  }
+}

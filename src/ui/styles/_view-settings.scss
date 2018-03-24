@@ -1,0 +1,91 @@
+//--------------------------------------------------------------------------
+// 设置界面
+//--------------------------------------------------------------------------
+
+.view-settings {
+  .setting{
+    display:flex;
+    margin: 35px;
+    h4{
+      flex-basis: 15%;
+    }
+    .setting-block{
+      flex: 1;
+      margin: 0 20px;
+    }
+  }
+  //播放器设置
+  .setting-interface{
+    align-items: center;
+    .setting-block{
+      display: flex;
+      .setting-section{
+        margin-right:30px; 
+      }
+    }
+  }
+ 
+  //设置按钮
+  .checkbox {
+
+      label {
+        padding-top: 10px;
+        padding-left: 28px; // Bootstrap default is 20
+        span.setting-title{
+          line-height: 24px;
+        }
+        input[type="checkbox"] {
+          -webkit-appearance: none; // reset everything
+          width: 18px;
+          height: 18px;
+          border-radius: 3px;
+          display: inline-block;
+          background-color: $generic-lightgrey;
+          border: 1px solid darken($generic-lightgrey, 20%);
+          outline: none;
+          margin-left: -28px;
+
+          &:checked {
+            background-color: $main_color;
+            border: darken($main_color, 20%);
+
+            &:after {
+              content: "\f00c";
+              font-family: FontAwesome;
+              font-size: 14px;
+              color: $white;
+              position: absolute;
+              top: 2px;
+              left: 2px;
+            }
+          }
+        }
+      }
+  }
+  //添加歌库
+
+  .dropzone {
+    border: dashed 1px lightgrey;
+    margin-bottom: 15px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  
+    &.dragging {
+      border-color: $main_color;
+    }
+  
+    .title {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  
+    .subtitle {
+      color: #7d7d7d;
+    }
+  }
+
+}
+
+
+

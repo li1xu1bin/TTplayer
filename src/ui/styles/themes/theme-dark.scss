@@ -1,0 +1,115 @@
+//
+// 暗黑模式
+//
+$dark_bgcolor: #23292b;
+$dark_txtcolor: #eee;
+body.theme-dark {
+    background-color: $dark_bgcolor;
+    color: $dark_txtcolor;
+    ::-webkit-scrollbar {
+        background-color: #293032;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, .2);
+    }
+    .header {
+        a {
+            &.title-link {
+                color: $dark_txtcolor;
+            }
+        }
+    }
+    .now-playing {
+        background: rgba(35, 41, 43, 0.8);
+    }
+    .player-control {
+        svg {
+            fill: $dark_txtcolor;
+        }
+    }
+    .view-playlists {
+        .playlists-nav {
+            .playlists-nav-body {
+                .playlist-nav-item {
+                    a {
+                        &:hover {
+                            background-color: #33393b;
+                        }
+                    }
+                    input[type="text"] {
+                      background-color: #33393b;
+                      color: $dark_txtcolor;
+                    }
+                }
+            }
+        }
+    }
+    .now-playing-infos {
+        .now-playing-metas {
+            .metas {
+                .meta-artist {
+                    color: $dark_txtcolor;
+                }
+            }
+        }
+    }
+    .playing-indicator {
+        .animation {
+            .bar {
+                background-color: $dark_txtcolor;
+            }
+        }
+    }
+    button.btn-default {
+        color: $dark_txtcolor;
+    }
+    .queue-dropdown {
+        &.open {
+            >.dropdown-toggle.btn-default,
+            >.dropdown-toggle.btn-default:focus,
+            >.dropdown-toggle.btn-default:hover {
+                background-color: $dark_bgcolor;
+            }
+        }
+    }
+    .alert {
+        border-color: #23292b;
+        background-color: #33393b;
+        color: #EEE;
+        &.alert-success {
+            border-left-color: #5cb85c;
+        }
+        &.alert-info {
+            border-left-color: #5bc0de;
+        }
+        &.alert-warning {
+            border-left-color: #f0ad4e;
+        }
+        &.alert-danger {
+            border-left-color: #d9534f;
+        }
+    }
+    .form-control {
+        border-color: #6D6D6D;
+        background-color: $dark_bgcolor;
+        color: $dark_txtcolor;
+    }
+    .full-message {
+        color: $dark_txtcolor;
+    }
+    .window-controls .window-control {
+        color: #EEE;
+        &.window-minimize,
+        &.window-maximize {
+            &::after {
+                border-color: #EEE;
+            }
+        }
+        &.window-close {
+            &::before,
+            &::after {
+                background-color: $white;
+            }
+        }
+    }
+}

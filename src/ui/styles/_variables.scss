@@ -1,0 +1,18 @@
+$main_color: #3394FF;
+$white:#FFFFFF;
+$black:#000000;
+
+$generic-lightgrey: #F4F4F4;
+
+$top-header-height: 24;
+$main-header-height: 50;
+
+$_header-color: #555;
+
+
+
+$_window-control-bg-hover: rgba(0, 0, 0, .1);
+$_window-control-bg-active: rgba(0, 0, 0, .15);
+$_window-control-close-bg-hover: rgb(196, 36, 36);
+$_window-control-close-bg-active: darken($_window-control-close-bg-hover, 5%);
+$_window-control-size: #{$top-header-height}px;

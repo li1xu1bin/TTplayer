@@ -1,0 +1,245 @@
+//--------------------------------------------------------------------------
+// 底部控制
+//--------------------------------------------------------------------------
+
+
+.footer {
+    -webkit-app-region: drag;
+    .player-control{
+        -webkit-app-region: no-drag;
+    }
+}
+
+
+//底部控制部分
+.controls-block {
+    height: 68px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .controls-left {
+        flex: 1;
+    }
+    .controls-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .controls-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    } 
+   
+    
+   
+
+}
+ //控制按钮
+.player-control {
+    border: 0;
+    background: transparent;
+    margin: 0 5px;
+    
+    &.previous {
+
+        // color: #fff;
+        // background-color: $main_color;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        font-size: 16px;
+    }
+    &.play {
+
+        // color: #fff;
+        // background-image: linear-gradient(-28deg, #3394FF 0%, #62BFFF 95%);
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+        border-radius: 100%;
+        span.fa-pause{
+            color:$main_color;
+        }
+    }
+    &.forward {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        font-size: 16px;
+    }
+    &.volume {
+        display: flex;
+        align-items: center;
+        span {
+            width: 30px;
+        }
+    }
+    &.shuffle,&.repeat {
+        span{
+            display: flex;
+        }
+    }
+    &.active{
+        svg {
+            fill:$main_color;
+        }
+    }
+    svg {
+        width: 20px;
+    }
+    &:hover{
+        color:$main_color;
+    }
+    &.plug {
+        position: absolute;
+        right: 50px;
+        bottom: 30px;
+    }
+} 
+//音量条样式
+.volume-control {
+    -webkit-app-region: no-drag;
+    input[type=range] {
+        width: 88px;
+        background:transparent; 
+        cursor: pointer;
+        outline: none;
+        -webkit-appearance: none;/*清除系统默认样式*/    
+        &::focus {
+            outline: none;
+        }
+        // 滑动条样式
+        &::-webkit-slider-runnable-track {
+            height: 8px;
+            border-radius: 20px; 
+            background: $main_color;
+            border: none;
+        }
+        // 滑块样式
+        &::-webkit-slider-thumb {    
+            position: relative;
+            -webkit-appearance: none;   
+            height:14px;   
+            width: 14px;
+            top: -3px; 
+            background: #fff;  
+            border-radius: 50%;   
+            border:1px solid $main_color;
+       }   
+    }
+}
+
+
+//播放歌单按钮
+.queue-dropdown {
+    //列表
+    .dropdown-menu {
+        position: fixed;
+        top: 0;
+        left: 62%;
+        height: 87%;
+        width: 300px;
+        margin: 15px 15px 0 15px;
+    } //按钮
+    .dropdown-toggle {
+        border: 0;
+        background: transparent;
+        font-size: 14px;
+        box-shadow: none;
+        &:hover {
+            color: $main_color;
+            background: transparent;
+        }
+    }
+    &.open {
+        >.dropdown-toggle.btn-default,
+        >.dropdown-toggle.btn-default:focus,
+        >.dropdown-toggle.btn-default:hover {
+            color: $main_color;
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+//播放歌单队列
+.queue {
+    .empty-queue {
+        padding: 20px;
+        color: lightgrey;
+    }
+    .queue-body {
+        max-height: 465px;
+        overflow: auto;
+        .track {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            position: relative;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            cursor: pointer;
+            -webkit-user-drag: element;
+            &.dragged {
+                .track-infos {
+                    opacity: .25;
+                }
+            }
+            &.dragged-over {
+                &::after {
+                    position: absolute;
+                    z-index: 1;
+                    display: block;
+                    width: 100%;
+                    content: "";
+                    border-bottom: solid 3px $main_color;
+                }
+                &.above::after {
+                    top: -2px;
+                }
+                &.below::after {
+                    bottom: -2px;
+                }
+            }
+            .track-infos {
+                flex: 1;
+                min-width: 0;
+                .title {
+                    font-weight: bold;
+                }
+                .title,
+                .other-infos {
+                    padding: 0 10px;
+                    color: rgb(51, 51, 51);
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+            .remove {
+                color: $_header-color;
+                width: 25px;
+                height: 25px;
+                line-height: 10px;
+                padding: 3px;
+                margin-top: 5px;
+                margin-right: 5px;
+                visibility: hidden;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $_header-color;
+                    text-decoration: none;
+                }
+            }
+            &:hover{
+                background: #eee;
+            }
+            &:hover .remove {
+                visibility: visible;
+            }
+        } 
+    }
+}

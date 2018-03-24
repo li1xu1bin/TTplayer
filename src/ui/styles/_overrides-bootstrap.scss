@@ -1,0 +1,137 @@
+//--------------------------------------------------------------------------
+// Bootstrap Modification
+//--------------------------------------------------------------------------
+
+.alert {
+  border-left-width: 5px;
+  background-color: $white;
+
+  &.alert-danger,
+  &.alert-info,
+  &.alert-warning,
+  &.alert-success {
+    border-color: #ddd;
+  }
+
+  &.alert-success {
+    border-left-color: $main_color;
+  }
+
+  &.alert-info {
+    border-left-color: #5bc0de;
+  }
+
+  &.alert-warning {
+    border-left-color: #f0ad4e;
+  }
+
+  &.alert-danger {
+    border-left-color: #d9534f;
+  }
+}
+
+.btn {
+
+  &.btn-default {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active {
+      background-color: transparent;
+    }
+  }
+
+  &.btn-primary {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active {
+      background-color: darken(#428bca, 6.5%);
+    }
+  }
+
+  &.btn-success {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active {
+      background-color: #5cb85c;
+    }
+  }
+
+  &.btn-info {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active {
+      background-color: #5bc0de;
+    }
+  }
+
+  &.btn-danger {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active {
+      background-color: #d9534f;
+    }
+  }
+
+  &.btn-warning {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active {
+      background-color: #f0ad4e;
+    }
+  }
+
+  &.active {
+    &.focus,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.focus {
+    outline: none;
+  }
+
+  &:active {
+    &.focus,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-control:focus {
+  border-color: #AAAAAA;
+  box-shadow: none;
+}
+
+
+.btn-default.active,
+.btn-default:active,
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open>.dropdown-toggle.btn-default.focus,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover,
+.open>.dropdown-toggle.btn-default {
+  color: inherit;
+}

@@ -1,0 +1,210 @@
+//--------------------------------------------------------------------------
+// 播放列表
+//--------------------------------------------------------------------------
+
+.view-library,
+.view-playlists {
+  overflow: hidden;
+  .tracks-list {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10px;
+    .tracks-list-header {
+      // border: 1px solid rgb(210, 210, 210);
+      // color: $black;
+      display: flex;
+      width: 100%;
+      // background-color: $white;
+
+      .track-cell-header {
+        font-weight: 700;
+        cursor: default;
+        -webkit-appearance: none;
+        border: 0;
+        background: transparent;
+        display: block;
+        text-align: left;
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        &.sort:focus {
+          background-color: rgba(0, 0, 0, .025);
+        }
+
+        &.sort:active {
+          background-color: rgba(0, 0, 0, .04);
+        }
+
+        .col-icon {
+          padding-right: 6px;
+        }
+
+        .col-name {
+          flex: 1;
+          font-size: 14px;
+          margin: 4px 0;
+          padding: 0 4px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        // &:not(:first-child) {
+        //   .col-name {
+        //     border-left: 1px solid #D2D2D2;
+        //   }
+        // }
+      }
+    }
+
+    .tracks-list-body {
+      height: 100%;
+      max-height: 100%;
+      overflow: auto;
+
+      .tracks-list-render-view {
+        overflow-x: hidden !important; // Overriding react-custom-scrollbars
+        margin-bottom: 0 !important; // there is no overflow-x
+      }
+
+      .track-vertical {
+        right: 8px;
+        background-color: #DDD;
+        top: 8px;
+        bottom: 8px;
+        z-index: 10;
+      }
+
+      .thumb-vertical {
+        background: rgba(0, 0, 0, .25);
+      }
+
+      .tracks-list-tiles {
+        position: relative;
+
+        .tracks-list-tile {
+          position: absolute;
+          width: 100%;
+          z-index: 10;
+
+          .track {
+            display: flex;
+
+            // &:nth-child(odd) {
+            //    background-color: #F4F4F4;
+            // }
+
+            &.selected {
+              background-color: $main_color;
+              color: $white;
+
+              // put that elsewhere someday
+              .playing-indicator {
+
+                .animation {
+
+                  .bar {
+                    background-color: #fff;
+                  }
+                }
+              }
+            }
+
+            .cell {
+              padding: 3px 4px;
+              cursor: default;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .cell-track-playing {
+      width: 30px;
+    }
+    //标题
+    .cell-track {
+      flex: 1;
+    }
+    //时长
+    .cell-duration {
+      width: 10%;
+    }
+    //歌手，专辑
+    .cell-artist,
+    .cell-album {
+      width: 20%;
+    }
+  }
+}
+
+//播放小图标
+.playing-indicator {
+  height: 100%;
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform ease-in-out .25s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  .animation {
+    width: 8px;
+    height: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+
+    .bar {
+      height: 8px;
+      width: 2px;
+      align-items: baseline;
+      background-color: #333;
+      animation: bar-animate;
+      animation-duration: .8s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      transform: translate3d(0, 8px, 0);
+
+      &.bar-second {
+        animation-delay: .55s;
+      }
+
+      &.bar-third {
+        animation-delay: .25s;
+      }
+
+      &:not(:last-child) {
+        margin-right: 1px;
+      }
+    }
+  }
+}
+
+@keyframes bar-animate {
+
+  from {
+    transform: translate3d(0, 8px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 8px, 0);
+  }
+}
