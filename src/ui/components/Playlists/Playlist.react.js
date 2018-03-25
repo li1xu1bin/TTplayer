@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import TracksList    from '../Shared/TracksList.react.js';
 import FullViewMessage from '../Shared/FullViewMessage.react';
-import { Link } from 'react-router-dom';
 
 import AppActions from '../../actions/AppActions';
 import { filterTracks } from '../../utils/utils-library';

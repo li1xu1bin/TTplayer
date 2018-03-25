@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { Switch, Route, Redirect } from 'react-router-dom';
 
 import PlayingInfos from './PlayingInfos.react';
 import PlayingSpectrum from './PlayingSpectrum.react';
@@ -40,33 +37,33 @@ class Playing extends Component {
     let playingContent;
 
     if(queueCursor === null) {
-        playingContent = (
-          <FullViewMessage>
-            <p>没有正在播放的音乐</p>
-          </FullViewMessage>
-        );
+      playingContent = (
+        <FullViewMessage>
+          <p>没有正在播放的音乐</p>
+        </FullViewMessage>
+      );
     }else{
-        playingContent = (
+      playingContent = (
         <div>
           <PlayingSpectrum 
-          playerStatus={playerStatus}
-          spectrumStyle={spectrumStyle}
+            playerStatus={playerStatus}
+            spectrumStyle={spectrumStyle}
           />
           <div className='now-playing' >
-             <div className='now-playing-cover'>
+            <div className='now-playing-cover'>
               <Cover path={trackPlaying.path} />
-             </div>
+            </div>
             <PlayingInfos
-                trackPlaying={trackPlaying}
-               />
+              trackPlaying={trackPlaying}
+            />
           </div>
         </div>
-        );
+      );
     }
 
     return (
       <div className='view view-playing'>
-         { playingContent }
+        { playingContent }
       </div>
     );
   }

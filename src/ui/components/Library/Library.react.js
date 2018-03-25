@@ -66,7 +66,7 @@ class Library extends Component {
         <FullViewMessage>
           <p>未找到相关结果</p>
           <p className='sub-message'>
-              <Link to='/settings'>添加音乐</Link>
+            <Link to='/settings'>添加音乐</Link>
           </p>
         </FullViewMessage>
       );

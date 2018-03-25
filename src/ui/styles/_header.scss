@@ -1,15 +1,13 @@
 //--------------------------------------------------------------------------
 // 标题栏
 //--------------------------------------------------------------------------
-
 //不是原生模式的时候留点空间
-.root.os-darwin:not(.native-frame) .header{
+.root.os-darwin:not(.native-frame) .header {
     padding-top: 40px;
 }
 
 .header {
-    width: 100%;
-    // height: 75px;
+    width: 100%; // height: 75px;
     margin-bottom: 10px;
     display: flex;
     align-items: flex-end;
@@ -38,11 +36,11 @@
         justify-content: flex-end;
         margin: 0 10px;
         .react-simple-input {
-          padding: 5px 0px;
-          border: none;
-          outline: none;
-          font-size: 18px;
-          background: transparent;
+            padding: 5px 0px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            background: transparent;
         }
         .react-simple-input-clear {
             position: absolute;
@@ -63,91 +61,75 @@
     top: 0;
     right: 0;
     height: 24px;
-  
-  
     .window-control {
-      width: $_window-control-size;
-      font-size: 15px;
-      color: $_header-color;
-      border: 0;
-      text-align: center;
-      padding: 0;
-      line-height: $_window-control-size;
-      background-color: transparent;
-      -webkit-app-region: no-drag;
-  
-      &:hover {
-        background-color: $_window-control-bg-hover;
-      }
-  
-      &:active {
-        background-color: $_window-control-bg-active;
-      }
-  
-      &.window-minimize {
-  
-        &::after {
-          content: "";
-          display: block;
-          margin: auto;
-          border-bottom: solid 2px #555;
-          width: 10px;
-        }
-      }
-  
-      &.window-maximize {
-  
-        &::after {
-          content: "";
-          display: block;
-          margin: auto;
-          border: solid 1px #555;
-          border-top-width: 2px;
-          height: 9px;
-          width: 10px;
-        }
-      }
-  
-      &.window-close {
-        position: relative;
-  
+        width: $_window-control-size;
+        font-size: 15px;
+        color: $_header-color;
+        border: 0;
+        text-align: center;
+        padding: 0;
+        line-height: $_window-control-size;
+        background-color: transparent;
+        -webkit-app-region: no-drag;
         &:hover {
-          background-color: $_window-control-close-bg-hover;
-  
-          &::before,
-          &::after {
-            background-color: $white;
-          }
+            background-color: $_window-control-bg-hover;
         }
-  
         &:active {
-          background-color: $_window-control-close-bg-active;
-  
-          &::before,
-          &::after {
-            background-color: $white;
-          }
+            background-color: $_window-control-bg-active;
         }
-  
-        &::before,
-        &::after {
-          display: block;
-          position: absolute;
-          content: " ";
-          height: 11px;
-          width: 2px;
-          background-color: #555;
-          top: 7px;
-          left: 11px;
+        &.window-minimize {
+            &::after {
+                content: "";
+                display: block;
+                margin: auto;
+                border-bottom: solid 2px #555;
+                width: 10px;
+            }
         }
-  
-        &::before {
-          transform: rotate(45deg);
+        &.window-maximize {
+            &::after {
+                content: "";
+                display: block;
+                margin: auto;
+                border: solid 1px #555;
+                border-top-width: 2px;
+                height: 9px;
+                width: 10px;
+            }
         }
-  
-        &::after {
-          transform: rotate(-45deg);
+        &.window-close {
+            position: relative;
+            &:hover {
+                background-color: $_window-control-close-bg-hover;
+                &::before,
+                &::after {
+                    background-color: $white;
+                }
+            }
+            &:active {
+                background-color: $_window-control-close-bg-active;
+                &::before,
+                &::after {
+                    background-color: $white;
+                }
+            }
+            &::before,
+            &::after {
+                display: block;
+                position: absolute;
+                content: " ";
+                height: 11px;
+                width: 2px;
+                background-color: #555;
+                top: 7px;
+                left: 11px;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
         }
-      }
     }
-  }
+}

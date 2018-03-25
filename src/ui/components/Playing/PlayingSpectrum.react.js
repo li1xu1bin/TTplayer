@@ -23,12 +23,10 @@ class PlayingSpectrum extends Component {
     };
 
     this.toggleSpectrum = this.toggleSpectrum.bind(this);
-   
-
   }
   toggleSpectrum() {
     this.setState({
-      spectrumStyle: !this.state.spectrumStyle
+      spectrumStyle: !this.state.spectrumStyle,
     });
 
     // switch(this.state.spectrumStyle) {
@@ -48,11 +46,10 @@ class PlayingSpectrum extends Component {
     //     });
     //     break;
     // }
-   
   }
 
   render() {
-    const { playerStatus } = this.props;
+    // const { playerStatus } = this.props;
     const activeStatus = classnames('playing-wave', {
       running: this.props.playerStatus === 'play',
     });
@@ -60,41 +57,40 @@ class PlayingSpectrum extends Component {
     let playingStyle;
     
   
-    if(this.state.spectrumStyle){
-       playingStyle = (
+    if(this.state.spectrumStyle) {
+      playingStyle = (
         <div className={activeStatus} >
-        <div className="rectangle-1"></div>
-        <div className="rectangle-2"></div>
-        <div className="rectangle-3"></div>
-        <div className="rectangle-4"></div>
-        <div className="rectangle-5"></div>
-        <div className="rectangle-6"></div>
-        <div className="rectangle-5"></div>
-        <div className="rectangle-4"></div>
-        <div className="rectangle-3"></div>
-        <div className="rectangle-2"></div>
-        <div className="rectangle-1"></div>
+          <div className="rectangle-1" />
+          <div className="rectangle-2" />
+          <div className="rectangle-3" />
+          <div className="rectangle-4" />
+          <div className="rectangle-5" />
+          <div className="rectangle-6" />
+          <div className="rectangle-5" />
+          <div className="rectangle-4" />
+          <div className="rectangle-3" />
+          <div className="rectangle-2" />
+          <div className="rectangle-1" />
         </div>
       );
     } else{
       playingStyle = (
 
-      <div className='blank' >
-      </div>
+        <div className='blank' />
       );
     }
 
     return (
       <div className='playing-spectrum' >
-      { playingStyle }
-      <button
+        { playingStyle }
+        <button
           type='button'
           className='player-control plug'
           title='特效'
           onClick={this.toggleSpectrum}
-      >
-        <Icon name='plug' />
-      </button>
+        >
+          <Icon name='plug' />
+        </button>
       </div>
     );
   }

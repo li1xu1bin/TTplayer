@@ -32,7 +32,6 @@ export default class Queue extends PureComponent {
     this.dragStart = this.dragStart.bind(this);
     this.dragOver  = this.dragOver.bind(this);
     this.dragEnd   = this.dragEnd.bind(this);
-
   }
   dragStart(e, index) {
     e.dataTransfer.effectAllowed = 'move';
@@ -93,11 +92,7 @@ export default class Queue extends PureComponent {
 
     const queue       = this.props.queue;
     const queueCursor = this.props.queueCursor;
-
     const shownQueue = queue.slice(queueCursor + 1, queueCursor + 21);
-
-    const incomingQueue = queue.slice(queueCursor + 1);
-
     const queueClasses = classnames('queue', {
       visible: this.props.visible,
     });

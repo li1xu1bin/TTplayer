@@ -63,36 +63,35 @@ class Settings extends Component {
   }
 
   render() {
-    const { library } = this.props;
     const conf = config.getAll();
 
     return (
       <div className='view view-settings'>
 
-       <div className='setting settings-musicfolder'>
+        <div className='setting settings-musicfolder'>
           <h4>管理歌库</h4>
           <div className='setting-block'>
-          <Dropzone
-            title='添加音乐'
-            subtitle='拖动文件/文件夹到这里'
-            onDrop={this.onDrop}
-            onClick={this.openFolderSelector}
-          />
-          <ButtonGroup>
-            <Button
-              bsSize='small'
-              bsStyle='danger'
-              title='重置歌库'
-              disabled={this.props.library.refreshing}
-              onClick={this.resetLibrary}
-            >
-                          重置歌库
-            </Button>
-          </ButtonGroup>
+            <Dropzone
+              title='添加音乐'
+              subtitle='拖动文件/文件夹到这里'
+              onDrop={this.onDrop}
+              onClick={this.openFolderSelector}
+            />
+            <ButtonGroup>
+              <Button
+                bsSize='small'
+                bsStyle='danger'
+                title='重置歌库'
+                disabled={this.props.library.refreshing}
+                onClick={this.resetLibrary}
+              >
+                重置歌库
+              </Button>
+            </ButtonGroup>
           </div>
-       </div>
+        </div>
 
-       <div className='setting setting-audio'>
+        <div className='setting setting-audio'>
           <h4>播放速率</h4>
           <div className='setting-block'>
             <label>
@@ -107,55 +106,55 @@ class Settings extends Component {
               step='0.1'
             />
           </div>
-       </div>
+        </div>
 
-       <div className='setting setting-interface'>
-        <h4>播放器设置</h4>
-        <div className='setting-block '>
+        <div className='setting setting-interface'>
+          <h4>播放器设置</h4>
+          <div className='setting-block '>
 
-        <CheckboxSetting
-          title='黑暗模式'
-          description=''
-          defaultValue={conf.theme === 'dark'}
-          onClick={AppActions.settings.toggleDarkTheme}
-        />
-        <CheckboxSetting
-          title='允许通知'
-          description=''
-          defaultValue={conf.displayNotifications}
-          onClick={AppActions.settings.toggleDisplayNotifications}
-        />
-        <CheckboxSetting
-          title='原生模式'
-          description=''
-          defaultValue={conf.useNativeFrame}
-          onClick={AppActions.settings.toggleNativeFrame}
-        />
-        {/* <CheckboxSetting
+            <CheckboxSetting
+              title='黑暗模式'
+              description=''
+              defaultValue={conf.theme === 'dark'}
+              onClick={AppActions.settings.toggleDarkTheme}
+            />
+            <CheckboxSetting
+              title='允许通知'
+              description=''
+              defaultValue={conf.displayNotifications}
+              onClick={AppActions.settings.toggleDisplayNotifications}
+            />
+            <CheckboxSetting
+              title='原生模式'
+              description=''
+              defaultValue={conf.useNativeFrame}
+              onClick={AppActions.settings.toggleNativeFrame}
+            />
+            {/* <CheckboxSetting
           title='阻止睡眠'
           description=''
           defaultValue={conf.sleepBlocker}
           onClick={AppActions.settings.toggleSleepBlocker}
         /> */}
-        <CheckboxSetting
-          title='最小到托盘'
-          description=''
-          defaultValue={conf.minimizeToTray}
-          onClick={AppActions.settings.toggleMinimizeToTray}
-        />
-        {/* <CheckboxSetting
-          title='检查更新'
-          description=''
-          defaultValue={conf.autoUpdateChecker}
-          onClick={AppActions.settings.toggleAutoUpdateChecker}
-        /> */}
-         <CheckboxSetting
-          title='开发者模式'
-          defaultValue={conf.devMode}
-          onClick={AppActions.settings.toggleDevMode}
-        />
+            <CheckboxSetting
+              title='最小到托盘'
+              description=''
+              defaultValue={conf.minimizeToTray}
+              onClick={AppActions.settings.toggleMinimizeToTray}
+            />
+            {/* <CheckboxSetting
+              title='检查更新'
+              description=''
+              defaultValue={conf.autoUpdateChecker}
+              onClick={AppActions.settings.toggleAutoUpdateChecker}
+            /> */}
+            <CheckboxSetting
+              title='开发者模式'
+              defaultValue={conf.devMode}
+              onClick={AppActions.settings.toggleDevMode}
+            />
+          </div>
         </div>
-      </div>
       </div>
     );
   }

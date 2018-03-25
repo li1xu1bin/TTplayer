@@ -17,7 +17,7 @@
 
 #### 开发构建
 
-
+- `git clone`
 - `cd TTplay`
 - `npm install`
 - `npm run compile` or `npm run dev`  
