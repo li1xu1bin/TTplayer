@@ -1,6 +1,6 @@
-# TTplayer
+![logo](logo.png)
 
-基于React+Electron构建的多平台音乐播放器  
+基于<a href="https://reactjs.org/">React</a>+<a href="https://electronjs.org/">Electron</a>构建的多平台音乐播放器  
 本项目由<a href="https://github.com/KeitIG/museeks">Museeks</a>重构而成
 
 ![截图](music.png)
