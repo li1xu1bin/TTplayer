@@ -5,7 +5,6 @@
 
 ![截图](music.png)
 
----
 #### 使用技术
 * [Node.js](https://nodejs.org/en/) 
 * [Electron](https://github.com/atom/electron/)
@@ -13,7 +12,6 @@
 * [Flux](https://facebook.github.io/flux/)
 * [Redux](http://redux.js.org/)
 
----
 
 #### 开发构建
 
